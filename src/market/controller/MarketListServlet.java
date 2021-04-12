@@ -11,10 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import market.model.service.MarketService;
+import market.model.vo.MPageData;
 import market.model.vo.Market;
-import market.model.vo.PageData;
-
-
 
 
 /**
@@ -37,20 +35,22 @@ public class MarketListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		int currentPage = 0;
 		if(request.getParameter("currentPage") == null) {
-        	currentPage = 1;
-        } else {
-        	currentPage = Integer.parseInt(request.getParameter("currentPage"));
-        }
-		PageData pageData = new MarketService().printAllMarketList(currentPage);
+			currentPage = 1;
+		} else {
+			currentPage = Integer.parseInt(request.getParameter("currentPage"));
+		}
+		// int uniqId = Integer.parseInt(request.getParameter("uniqId"));
+		MPageData pageData = new MarketService().printAllMarketList(currentPage); 
 		ArrayList<Market> mList = pageData.getMarketList();
 		String pageNavi = pageData.getPageNavi();
+		
 		if(!mList.isEmpty()) {
 			request.setAttribute("mList", mList);
 			request.setAttribute("pageNavi", pageNavi);
 			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/gymmarket/gymmarket.jsp");
 			view.forward(request, response);
 		}else {
-			RequestDispatcher view = request.getRequestDispatcher("#");
+			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/gymmarket/error.html");
 			view.forward(request, response);
 		}
 	}

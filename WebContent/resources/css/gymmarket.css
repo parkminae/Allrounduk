@@ -9,7 +9,6 @@ body {
 }
 a {
     text-decoration: none;
-    
 }
 ul {
     list-style: none;
@@ -143,7 +142,7 @@ header img {
 
 .lb-wrap img{
     width : 1280px;
-    height: 305px;
+    height: 100%;
     margin: 0;
 }
 
@@ -181,13 +180,13 @@ header img {
 /* 메인 리스트 시작  */
 main{
     width: 1280px;
-    height: auto;
+    height: 1000px;
     margin: 0;
     border: solid 5px #000000;
 }
 .inner-frame {
     width: 1025px;
-    height: 500px;
+    height: inherit;
     margin: 109px auto auto;
 }
 
@@ -251,6 +250,7 @@ table {
 .header-title {
     width: 500px;
 }
+
 .header-name {
     width: 150px
 }
@@ -289,6 +289,9 @@ table {
 .contain-title {
     text-align: left;
 }
+.contain-title a {
+	color : black;
+}
 /* 테이블 끝 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 
 /* 버튼, 페이징 시작  */
@@ -325,7 +328,9 @@ table {
     color: #000000;
 }
 
-
+.pazing a {
+	color : black;
+}
 
 /******************푸터********************/
 footer {

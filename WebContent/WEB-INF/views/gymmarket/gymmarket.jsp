@@ -15,12 +15,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <title>짐마켓</title>
-<link rel="stylesheet" type="text/css" href="href="resources/css/gymmarket.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/gymmarket.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $('#writebtn').on("click", function(){
                 var go_login = confirm("로그인 후 사용가능합니다.")
@@ -33,12 +33,12 @@
             });
         })
     </script>
-
+ -->
     <div id="wrapper">
         <header id="header">
             <!-- 네이게이션 바 -->
             <div class="frame">
-                <a href="#"><img src="img/gym-carry.png"></a>
+                <a href="#"><img src="${path}/img/gym-carry.png"></a>
                 <ul class="navbar">
                     <a href="#"><li class="nav-menu first-nav">GYM STORY</li></a>
                     <a href="#"><li class="nav-menu second-nav">GYM POT</li></a>
@@ -54,7 +54,7 @@
             <!-- 상단 이미지 바  -->
             <div class="lb-wrap">
                 <div class="lb-image">
-                    <img src="img/banner.png">
+                    <img src="${path}/img/banner.png">
                 </div>
                 <div class="lb-text">
                     <span id="bold-T">GYM MARKET</span> <br>
@@ -71,8 +71,10 @@
                             <option>작성자</option>
                             <option>내용</option>
                     </select>
-                    <input type="text" class="searchbox" placeholder="검색어를 입력해주세요.">
-                    <input type="button" class="searchbtn" value="검색">
+                    <from action="/market/search" method="get">
+	                    <input type="text" class="searchbox" placeholder="검색어를 입력해주세요.">
+	                    <input type="button" class="searchbtn" value="검색">
+                    </from>
                 </div>
                 <table frame=void>
                     <tr class="list-header">
@@ -81,32 +83,31 @@
                         <th class="header-name">NAME</th>
                         <th class="header-date">DATE</th>
                     </tr>
-                    <%-- <% for(Market mOne : list) { %>
+                    <% for(Market mOne : list) { %>
                     <tr class="list-contain">
                         <th><%= mOne.getMarketNo() %></th>
-                        <th class="contain-title"><%= mOne.getMarketTitle() %></th>
-                        <th><%= mOne.getMarketField() %></th>
+                        <th class="contain-title"><a href="/market/detail?marketNo=<%= mOne.getMarketNo() %>"><%= mOne.getMarketTitle() %></a></th>
+                        <th><%= mOne.getNickName() %></th>
                         <th><%= mOne.getMarketDate() %></th>
                     </tr>
-                    <% } %> --%>
+                    <% } %>
                 </table>
                 <div class="writebtn">
-                    <form action="#" method="GET"> 
+                    <form action="/market/write" method="get"> 
                         <input type="button" name="write" id="writebtn" value="글쓰기">
                     </form>
                 </div>
                 <div class="pazing">
-                   <!--  <img src="img/prev.png">
-                      1 2 3 4 5 
-                    <img src="img/next.png">   -->
-                    <%= pageNavi %>
+               		<%-- <a href="#"><img src="${path}/img/prev.png"></a>  --%>
+               		  	<%= pageNavi %>
+                    <%-- <a href="#"><img src="${path}/img/next.png"></a>  --%>
                 </div>
           </div>
         </main>
         
         <footer>
             <div class="frame">
-                <a href="#"><img src="img/wLogo.png"></a>
+                <a href="#"><img src="${path}/img/wLogo.png"></a>
                 <div class="footer-contents">
                     <p>(주)올라운덕	<span class="stick"></span>	대표이사 올라운덕	<span class="stick"></span>	사업자등록번호 123-45-67890</p>
                     <p>서울특별시 종로구 종로대로 1000  	 <span class="stick"></span>	고객센터 080-1234-5678 (수신자요금부담)</p>

@@ -12,17 +12,18 @@ import market.model.vo.Market;
 
 public class MarketDAO {
 
-	public ArrayList<Market> printAllMarketList(Connection conn, int currentPage) {
+	public ArrayList<Market> printAllMarketList(Connection conn,int currentPage) {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		ArrayList<Market> mList = null;
-		String query="";
-		
+		String query="SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY MARKET_NO DESC) AS NUM, MARKET_NO, (SELECT NICKNAME FROM TB_USER WHERE UNIQ_ID='1') as NICKNAME, MARKET_TITLE, MARKET_PRICE, MARKET_CONTENT, MARKET_FILED,MARKET_DATE FROM TB_MARKET ) WHERE NUM BETWEEN ? AND ?"
+				+ "";
 		int recordCountPerPage = 6;
 		int start = currentPage*recordCountPerPage - (recordCountPerPage-1);
 		int end = currentPage*recordCountPerPage;
 		try {
 			pstmt = conn.prepareStatement(query);
+			//pstmt.setInt(1, uniqId);
 			pstmt.setInt(1, start);
 			pstmt.setInt(2, end);
 			rset = pstmt.executeQuery();
@@ -30,11 +31,12 @@ public class MarketDAO {
 			while(rset.next()) {
 				Market market = new Market();
 				market.setMarketNo(rset.getInt("MARKET_NO"));
-				market.setUniqId(rset.getInt("UNIQ_ID"));
+				market.setNickName(rset.getString("NICKNAME"));
 				market.setMarketTitle(rset.getString("MARKET_TITLE"));
 				market.setMarketPrice(rset.getString("MARKET_PRICE"));
 				market.setMarketContent(rset.getString("MARKET_CONTENT"));
 				market.setMarketField(rset.getString("MARKET_FILED"));
+				market.setMarketDate(rset.getDate("MARKET_DATE"));
 				mList.add(market);
 			}
 		} catch (SQLException e) {
@@ -50,7 +52,7 @@ public class MarketDAO {
 
 	public String getPageNavi(Connection conn, int currentPage) {
 		int recordTotalCount = totalCount(conn);
-		int recordCountPerPage = 5;
+		int recordCountPerPage = 6;
 		int pageTotalCount = 0;
 		if(recordTotalCount % recordCountPerPage > 0) {
 			pageTotalCount = recordTotalCount / recordCountPerPage + 1;
@@ -68,9 +70,12 @@ public class MarketDAO {
 		int startNavi = ((currentPage-1)/naviCountPerPage) * naviCountPerPage +1;
 		int endNavi = startNavi + naviCountPerPage -1;
 		
+		// 오류 방지 코드
+		// 페이지 수 만큼 짤라줌 
 		if(endNavi > pageTotalCount) {
 			endNavi = pageTotalCount;
 		}
+		
 		boolean needPrev = true;
 		boolean needNext = true;
 		if(startNavi == 1) {
@@ -79,22 +84,24 @@ public class MarketDAO {
 		if(endNavi == pageTotalCount) {
 			needNext = false;
 		}
+		
 		StringBuilder sb = new StringBuilder();
 		if(needPrev) {
-			sb.append("<a href='/notice/list?currentPage=" + (startNavi-1)+ "'> < </a>");
+			sb.append("<a href='/market/list?currentPage="+ (startNavi-1)+ "'> < </a>");
 		}
 		for(int i = startNavi; i<=endNavi; i++) {
-			sb.append("<a href='/notice/list?currentPage=" + i +"'> "+ i +" </a>");
+			sb.append("<a href='/market/list?currentPage="+ i +"'> "+ i + " </a>");
 		}
 		if(needNext) {
-			sb.append("<a href='/notice/list?currentPage=" + (endNavi +1) + "'> > </a>");
+			sb.append("<a href='/market/list?currentPage="+ (endNavi+1) + "'> > </a>");
 		}
 		return sb.toString();
 	}
+	
 	public int totalCount(Connection conn) {
 		Statement stmt = null;
 		ResultSet rset = null;
-		String query = "SELECT COUNT(*) AS TOTALCOUNT FROM NOTICE";
+		String query = "SELECT COUNT(*) AS TOTALCOUNT FROM TB_MARKET";
 		int recordTotalCount = 0;
 		
 		try {
@@ -111,6 +118,25 @@ public class MarketDAO {
 			JDBCTemplate.close(stmt);
 		}
 		return recordTotalCount;
+	}
+
+	public int insertMarket(Connection conn, Market market) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		String query = "";
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1,market.getMarketField());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(pstmt);
+		}
+		
+		return result;
 	}
 
 }

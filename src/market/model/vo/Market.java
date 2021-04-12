@@ -5,6 +5,7 @@ import java.sql.Date;
 public class Market {
 	private int marketNo;
 	private int uniqId;
+	private String nickName;
 	private String marketTitle;
 	private String marketPrice;
 	private String marketContent;
@@ -54,11 +55,19 @@ public class Market {
 	public void setMarketDate(Date marketDate) {
 		this.marketDate = marketDate;
 	}
+	
+	public String getNickName() {
+		return nickName;
+	}
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
 	@Override
 	public String toString() {
-		return "Market [marketNo=" + marketNo + ", uniqId=" + uniqId + ", marketTitle=" + marketTitle + ", marketPrice="
-				+ marketPrice + ", marketContent=" + marketContent + ", marketField=" + marketField + ", marketDate="
-				+ marketDate + "]";
+		return "Market [marketNo=" + marketNo + ", uniqId=" + uniqId + ", nickName=" + nickName + ", marketTitle="
+				+ marketTitle + ", marketPrice=" + marketPrice + ", marketContent=" + marketContent + ", marketField="
+				+ marketField + ", marketDate=" + marketDate + "]";
 	}
+	
 	
 }
