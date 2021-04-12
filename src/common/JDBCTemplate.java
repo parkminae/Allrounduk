@@ -6,21 +6,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class JDBCTemplate {
 
+public class JDBCTemplate {
+	
 	private static JDBCTemplate instance;
 	
 	public JDBCTemplate() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	//ΩÃ±€≈Ê ∆–≈œ - JDBCTemplate ∞¥√º¥¬ «—π¯∏∏ ª˝º∫!
+	// Ïã±Í∏ÄÌÜ§ Ìå®ÌÑ¥ - JDBCTemplateÍ∞ùÏ≤¥Îäî ÌïúÎ≤àÎßå ÏÉùÏÑ±
 	public static JDBCTemplate getConnection() {
-		if (instance == null) {
+		if(instance == null) {
 			instance = new JDBCTemplate();
 		}
 		return instance;
@@ -29,12 +31,12 @@ public class JDBCTemplate {
 	public Connection createConnection() throws SQLException {
 		String url = "jdbc:oracle:thin:@sonof.iptime.org:8521:XE";
 		String user = "GYMCARRY";
-		String password = "GYMCARRY";
-		Connection conn = DriverManager.getConnection(url, user, password);
+		String parrword = "GYMCARRY";
+		Connection conn = DriverManager.getConnection(url,user,parrword);
+		conn.setAutoCommit(false); // ÏûêÎèô Ïª§Î∞ã Í∫ºÏ£ºÍ∏∞
 		return conn;
 	}
 	
-	// ø¿πˆ∑Œµ˘
 	public static void close(Connection conn) {
 		try {
 			if(conn != null && !conn.isClosed()) {
@@ -48,17 +50,18 @@ public class JDBCTemplate {
 	
 	public static void close(Statement stmt) {
 		try {
-			if (stmt != null && !stmt.isClosed()) {
+			if(stmt != null && !stmt.isClosed()) {
 				stmt.close();
 			}
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
 	public static void close(ResultSet rset) {
 		try {
-			if (rset != null && !rset.isClosed()) {
+			if(rset != null && !rset.isClosed()) {
 				rset.close();
 			}
 		} catch (SQLException e) {
@@ -67,23 +70,25 @@ public class JDBCTemplate {
 		}
 	}
 	
-	public static void rollback(Connection conn) {
+	public static void commit(Connection conn) {
 		try {
-			if (conn != null && !conn.isClosed()) {
-				conn.rollback();
-			}
-		} catch (SQLException e) {
+			if(conn != null && !conn.isClosed()) {
+				conn.commit();
+			} 
+		}
+			catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	public static void commit(Connection conn) {
+
+	public static void rollback(Connection conn) {
 		try {
-			if (conn!=null && !conn.isClosed()) {
-				conn.commit();
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			if(conn != null && !conn.isClosed()) {
+				conn.rollback();
+			} 
+		}
+			catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
