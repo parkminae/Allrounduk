@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*기본값*/
 body {
     margin: 0;
@@ -11,7 +10,6 @@ body {
 a {
     text-decoration: none;
     cursor: url(../img/cursor-hand.png), auto;
-    
 }
 ul {
     list-style: none;
@@ -137,161 +135,109 @@ main {
     width: 100%;
 }
 main>.frame {
+	margin-top:10px;
     border-left: solid 5px #000000;
     border-right: solid 5px #000000;
+    background-color: #fff;
 }
 
-/****************배너********************/
-.banner {
-    width: 100%;
-    height: auto;
-    border-top: solid 5px #000000;
-    border-bottom: solid 5px #000000;
-}
-
-main>.frame>p {
-    position: relative;
-    top: -220px;
-    text-align: center;
-    color: #fff;
-    font-size: 16px;
-}
-main>.frame>p>span {
-    font-family: 'Anton', sans-serif;
-    font-size: 50px;
-    letter-spacing: 2.5px;
-}
-/*****************배너끝*************************/
-
-.contents-frame {
+.inner-frame {
     width: 1080px;
-    height: 1000px;
+    height: inherit;
     margin: 0 auto;
 }
-.contents {
-    width: 336px;
-    height: 430px;
-    background-color: #fff;
-    float: left;
-    margin-bottom: 35px;
-}
-.contents:not(:nth-child(3n+1)) {
-    margin-left: 35px;
-}
-.contents>a {
+.inner-frame .title {
     width: 100%;
-    height: 100%;
+    height: inherit;
+    padding-top: 100px;
+    padding-bottom: 25px;
+    border-bottom: solid 4px #000;
 }
-.img-box {
-    display: block;
-    width: 310px;
-    height: 216px;
-    margin: 13px auto 0;
-    overflow: hidden;
-    align-content: center;
+.inner-frame .sub-title{
+    width: 100%;
+    height: 40px;
 }
-.content-text {
-    width: 310px;
-    height: 120px;
-    margin: 20px auto 0;
-}
-.title-area {
-    position: relative;
-    height: 30px;
-}
-.title-area span {
-    position: absolute;
+.sub-title p {
     font-size: 20px;
     font-weight: 500;
-    bottom: 0;
-    color: #000;
-}
-.title-area p {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    width: 300px;
+    float: left;
     margin: 0;
-    color: #a90000;
-    font-size: 16px;
-    font-weight: 500;
+    line-height: 40px;
 }
-.sale-time {
-    margin-top: 26px;
-}
-.sale-time p {
-    line-height: 15px;
-    color: #9b9b9b;
-}
-.content-text button {
-    width: 96px;
-    height: 40px;
-    background-color: #000;
-    color: #fff;
+.sub-title button {
+    float: right;
     border-radius: 50px;
     border: 0;
-    float: right;
+    background-color: #000;
+    color: #fff;
+    height: 40px;
+    width: 200px;
+    font-size: 16px;
+    line-height: 40px;
     cursor: url(../img/cursor-hand.png), auto;
 }
-/*******************페이징**********************/
-.paging .hide {
-    display:block;
-    height:0;
-    width:0;
-    font-size:0;
-    line-height:0;
-    margin:0;
-    padding:0;
-    overflow:hidden;
+.sub-title button:hover {
+    color: #dfdfdf;
+}
+.title>span {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 100px;
 }
 
-.paging{
-    padding:0 19px 100px;
-    text-align:center;
+.contents {
+    padding-top: 50px;
+    padding-bottom: 150px;
 }
-
-.paging a{
-    display:inline-block;
-    width:33px;
-    height:33px;
-    padding-top:2px;
-    vertical-align:middle;
-    font-size: 18px;
-    text-align: center;
-    line-height: 33px;
-    color: #000;
-    margin:0 3px;
-}
-
-.paging a:hover{
-    text-decoration:underline;
-}
-
-.paging .btn_arr{
-    text-decoration:none;
-}
-
-.prev{
-    background: url(../img/nav-left.png) center no-repeat;
-}
-.next{
-    background: url(../img/nav-right.png) center no-repeat;
-}
-
-.paging .on{
-    padding-top:1px;
-    height:33px;
-    color:#fff;
-    font-weight:bold;
-    background:#000;
-}
-
-.paging .on:hover{
-    text-decoration:none;
-}
-.btn_arr .prev {
-    background: url(../img/nav-left.png) no-repeat;
+.con-title {
     width: 100%;
-    height: 100%;
+    height: 50px;
+}
+.con-title span {
+    font-size: 18px;
+    font-weight: 600;
+    color: #666;
+    width: 200px;
+    float: left;
+}
+.con-title p {
+    display: block;
+    font-size: 18px;    
+    margin: 0;
+}
+
+.img-title {
+    margin-left: 200px;
+    margin-top: 50px;
+    display: table;
+    width: 800px;
+    height: inherit;
+}
+.img-box {
+    display: table-cell;
+    vertical-align: center;
+}
+.img-box img {
+    max-width: 800px;
+    max-height: 1000px;
+}
+.contents .text-box {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.contents button {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50px;
+    border: 0;
+    background-color: #000;
+    color: #fff;
+    height: 40px;
+    width: 200px;
+    font-size: 16px;
+    line-height: 40px;
+    cursor: url(../img/cursor-hand.png), auto;
 }
 
 
