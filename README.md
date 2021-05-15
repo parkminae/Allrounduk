@@ -145,4 +145,4 @@
   <img src = "https://user-images.githubusercontent.com/82187403/118356169-eb352e00-b5ae-11eb-95f8-cad4461f2ce6.png" width="100%">
 <hr>
 <h2>시연동영상</h2>
-<a href="https://drive.google.com/file/d/1ALsh9BqNvQlHkBbZoXKslN-ccia-E9bD/view?usp=sharing">[동영상보러가기]</a>
+<a href="https://drive.google.com/file/d/1ALsh9BqNvQlHkBbZoXKslN-ccia-E9bD/view?usp=sharing">동영상보러가기</a>
