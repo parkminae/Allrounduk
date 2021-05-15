@@ -3,6 +3,7 @@ package market.model.vo;
 import java.util.ArrayList;
 
 public class MPageData {
+	
 	private ArrayList<Market> marketList;
 	private String pageNavi;
 	

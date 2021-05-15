@@ -6,18 +6,23 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import like.model.service.LikeService;
+import member.model.vo.Member;
 
 /**
  * Servlet implementation class LikeDeleteServlet
  */
-@WebServlet("/LikeDeleteServlet")
+@WebServlet("/like/delete")
 public class LikeDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
     public LikeDeleteServlet() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -25,8 +30,19 @@ public class LikeDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		int uniqId = Integer.parseInt(request.getParameter("uniqId"));
+//		int marketNo = Integer.parseInt(request.getParameter("marketNo"));
+		HttpSession session = request.getSession();
+		Member member = (Member)session.getAttribute("member");
+		int uniqId = member.getUniqId();
+		String [] marketNo = request.getParameterValues("checkRow");
+		
+		int result = new LikeService().deleteLikeList(marketNo, uniqId);
+		if(result > 0) {
+			response.sendRedirect("/like/list");
+		}else {
+			request.getRequestDispatcher("/WEB-INF/views/gymmarket/error.html").forward(request, response);
+		}
 	}
 
 	/**

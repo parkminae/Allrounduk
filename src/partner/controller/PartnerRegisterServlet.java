@@ -8,16 +8,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class PartnerRegisterServlet
+ * 업체등록 페이지로 이동해주는 서블릿
  */
-@WebServlet("/PartnerRegisterServlet")
+@WebServlet("/partner/register")
 public class PartnerRegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
     public PartnerRegisterServlet() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -25,8 +26,8 @@ public class PartnerRegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		request.getRequestDispatcher("/WEB-INF/views/partner/partnerRegister.jsp").forward(request, response);
 	}
 
 	/**

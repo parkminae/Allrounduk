@@ -15,12 +15,10 @@ public class JDBCTemplate {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	// 싱글톤 패턴 - JDBCTemplate객체는 한번만 생성
 	public static JDBCTemplate getConnection() {
 		if(instance == null) {
 			instance = new JDBCTemplate();
@@ -43,7 +41,6 @@ public class JDBCTemplate {
 				conn.close();
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -54,7 +51,6 @@ public class JDBCTemplate {
 				stmt.close();
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -65,7 +61,6 @@ public class JDBCTemplate {
 				rset.close();
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -77,7 +72,6 @@ public class JDBCTemplate {
 			} 
 		}
 			catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

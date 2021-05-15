@@ -1,6 +1,7 @@
 package event.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import event.model.service.EventService;
 import event.model.vo.Event;
+import event.model.vo.EventPic;
 
 /**
  * Servlet implementation class EventDetailServlet
@@ -34,8 +36,15 @@ public class EventDetailServlet extends HttpServlet {
 		Event event = new EventService().selectOneEvent(eventNo);
 		if (event != null) {
 			request.setAttribute("event", event);
-			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/geundeal/geundealDetail.jsp");
-			view.forward(request, response);
+			ArrayList<EventPic> epList = new EventService().selectOneEventFile(eventNo);
+			if (!epList.isEmpty()) {
+				request.setAttribute("epList", epList);
+				RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/geundeal/geundealDetail.jsp");
+				view.forward(request, response);
+			}else {
+				RequestDispatcher view = request.getRequestDispatcher("#");
+				view.forward(request, response);
+			}
 		}else {
 			RequestDispatcher view = request.getRequestDispatcher("#");
 			view.forward(request, response);

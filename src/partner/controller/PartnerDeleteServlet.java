@@ -8,16 +8,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class PartnerDeleteServlet
+ * Servlet implementation class PartnerDeleteServler
  */
-@WebServlet("/PartnerDeleteServlet")
+@WebServlet("/partner/delete")
 public class PartnerDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
     public PartnerDeleteServlet() {
+        super();
         // TODO Auto-generated constructor stub
     }
 

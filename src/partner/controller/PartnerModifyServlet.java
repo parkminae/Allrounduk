@@ -10,14 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class PartnerModifyServlet
  */
-@WebServlet("/PartnerModifyServlet")
+@WebServlet("/partner/modify")
 public class PartnerModifyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
     public PartnerModifyServlet() {
+        super();
         // TODO Auto-generated constructor stub
     }
 

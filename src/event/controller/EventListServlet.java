@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import event.model.service.EventService;
 import event.model.vo.Event;
+import event.model.vo.EventPic;
 import event.model.vo.PageData;
 
 /**

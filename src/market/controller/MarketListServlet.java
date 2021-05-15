@@ -1,6 +1,7 @@
 package market.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -26,7 +27,6 @@ public class MarketListServlet extends HttpServlet {
      * Default constructor. 
      */
     public MarketListServlet() {
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -50,8 +50,10 @@ public class MarketListServlet extends HttpServlet {
 			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/gymmarket/gymmarket.jsp");
 			view.forward(request, response);
 		}else {
-			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/gymmarket/error.html");
-			view.forward(request, response);
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('내가 작성한 게시글이 없습니다.'); location.href='/member/mypage';</script>"); 
+			out.flush();
 		}
 	}
 

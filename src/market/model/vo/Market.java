@@ -11,6 +11,7 @@ public class Market {
 	private String marketContent;
 	private String marketField;
 	private Date marketDate;
+	private int num;
 	
 	public String getMarketPrice() {
 		return marketPrice;
@@ -62,12 +63,19 @@ public class Market {
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
 	@Override
 	public String toString() {
 		return "Market [marketNo=" + marketNo + ", uniqId=" + uniqId + ", nickName=" + nickName + ", marketTitle="
 				+ marketTitle + ", marketPrice=" + marketPrice + ", marketContent=" + marketContent + ", marketField="
-				+ marketField + ", marketDate=" + marketDate + "]";
+				+ marketField + ", marketDate=" + marketDate + ", num=" + num + "]";
 	}
+	
 	
 	
 }

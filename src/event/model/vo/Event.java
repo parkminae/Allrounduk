@@ -8,10 +8,19 @@ public class Event {
 	private String eventAddress;
 	private String eventTitle;
 	private String eventContent;
-	private Date startDate;
-	private Date endDate;
+	private String startDate;
+	private String endDate;
 	private String confirm;
+	private String fileName;
 	
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
 	public Event() {}
 
 	public int getEventNo() {
@@ -54,19 +63,19 @@ public class Event {
 		this.eventContent = eventContent;
 	}
 
-	public Date getStartDate() {
+	public String getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
 
-	public Date getEndDate() {
+	public String getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
 
@@ -82,8 +91,10 @@ public class Event {
 	public String toString() {
 		return "Event [eventNo=" + eventNo + ", partnerName=" + partnerName + ", eventAddress=" + eventAddress
 				+ ", eventTitle=" + eventTitle + ", eventContent=" + eventContent + ", startDate=" + startDate
-				+ ", endDate=" + endDate + ", confirm=" + confirm + "]";
+				+ ", endDate=" + endDate + ", confirm=" + confirm + ", fileName=" + fileName + "]";
 	}
+
+	
 	
 	
 }
