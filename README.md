@@ -129,9 +129,9 @@
 ## 설계
 ### 1. 유즈케이스
   + 사용자
-  ![image](https://user-images.githubusercontent.com/82187403/118356213-13bd2800-b5af-11eb-928a-ea73c1b906b2.png)
+  <img src="https://user-images.githubusercontent.com/82187403/118356213-13bd2800-b5af-11eb-928a-ea73c1b906b2.png", width="1000px">
   + 관리자 
-  ![image](https://user-images.githubusercontent.com/82187403/118356216-1b7ccc80-b5af-11eb-8d65-0d796cf177e7.png)
+  <img src="https://user-images.githubusercontent.com/82187403/118356216-1b7ccc80-b5af-11eb-8d65-0d796cf177e7.png", width="400px">
 
 ### 2. 플로우차트
   + 사용자
