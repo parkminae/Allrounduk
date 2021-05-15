@@ -129,20 +129,20 @@
 ## 설계
 ### 1. 유즈케이스
   + 사용자
-  <img src="https://user-images.githubusercontent.com/82187403/118356213-13bd2800-b5af-11eb-928a-ea73c1b906b2.png", width="1000px">
+  <img src = "https://user-images.githubusercontent.com/82187403/118356213-13bd2800-b5af-11eb-928a-ea73c1b906b2.png" width="60%">
   + 관리자 
-  <img src="https://user-images.githubusercontent.com/82187403/118356216-1b7ccc80-b5af-11eb-8d65-0d796cf177e7.png", width="400px">
+  <img src = "https://user-images.githubusercontent.com/82187403/118356216-1b7ccc80-b5af-11eb-8d65-0d796cf177e7.png" width="70%">
 
 ### 2. 플로우차트
   + 사용자
   
-  ![image](https://user-images.githubusercontent.com/82187403/118356221-1f105380-b5af-11eb-8fe0-6c8b632c4ebf.png)
+  <img src = "https://user-images.githubusercontent.com/82187403/118356221-1f105380-b5af-11eb-8fe0-6c8b632c4ebf.png" width="70%">
   + 관리자
 
-  ![image](https://user-images.githubusercontent.com/82187403/118356224-22a3da80-b5af-11eb-8bc5-549f4355abdf.png)
+  <img src = "https://user-images.githubusercontent.com/82187403/118356224-22a3da80-b5af-11eb-8bc5-549f4355abdf.png" width="60%">
 
 ### 3. ERD다이어그램
-  ![image](https://user-images.githubusercontent.com/82187403/118356169-eb352e00-b5ae-11eb-95f8-cad4461f2ce6.png)
----
-## 시연동영상
-[동영상보러가기](https://drive.google.com/file/d/1ALsh9BqNvQlHkBbZoXKslN-ccia-E9bD/view?usp=sharing)
+  <img src = "https://user-images.githubusercontent.com/82187403/118356169-eb352e00-b5ae-11eb-95f8-cad4461f2ce6.png" width="100%">
+<hr>
+<h2>시연동영상</h2>
+<a href="https://drive.google.com/file/d/1ALsh9BqNvQlHkBbZoXKslN-ccia-E9bD/view?usp=sharing">[동영상보러가기]</a>
