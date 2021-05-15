@@ -5,9 +5,10 @@
 ## Contents
 ### 1.[개요](#개요) 
 ### 2.[사용기술 및 개발환경](#사용기술-및-개발환경)
-### 3.[프로젝트 기능 구현](#프로젝트-기능-구현)
-### 4.[설계](#설계)
-### 5.[시연동영상](#시연동영상)
+### 3. [프로젝트 기능구현](#프로젝트-기능구현)
+### 4. [주요기능](#주요기능)
+### 5. [설계](#설계)
+### 6. [시연동영상](#시연동영상)
 ---
 ## 개요
 ### 기획의도
@@ -103,28 +104,60 @@
 ---
 ## 주요기능
 1. 회원가입/회원탈퇴
+<img src="https://user-images.githubusercontent.com/82187403/118357701-6d752080-b5b6-11eb-8967-5df7d6f7fdde.png" width="40%" height="40%">
 
 2. 로그인/로그아웃
+<img src="https://user-images.githubusercontent.com/82187403/118357709-736b0180-b5b6-11eb-9f0c-aebf679ad994.png" width="60%" height="60%">
+
 
 3. 아이디찾기/비밀번호찾기
+<img src="https://user-images.githubusercontent.com/82187403/118357719-78c84c00-b5b6-11eb-8afc-88afa8e9a697.png" width="60%" height="60%">
+<img src="https://user-images.githubusercontent.com/82187403/118357724-7d8d0000-b5b6-11eb-96e8-b478a1ec90ef.png" width="40%" height="40%">
+<img src="https://user-images.githubusercontent.com/82187403/118357727-8087f080-b5b6-11eb-9a92-19f77aed24f6.png" width="40%" height="40%">
+
 
 4. 짐팟(내 주변 운동시설 찾기)
+<img src="https://user-images.githubusercontent.com/82187403/118357650-41f23600-b5b6-11eb-83c2-7204da951ac7.png" width="60%" height="60%">
+
 
 5. 업체 상세페이지
+<img src="https://user-images.githubusercontent.com/82187403/118357655-474f8080-b5b6-11eb-98be-e4b8fa6e6b59.png" width="60%" height="60%">
+
 
 6. 짐마켓 (양도 게시글)
+<img src="https://user-images.githubusercontent.com/82187403/118357667-4e768e80-b5b6-11eb-88dc-297d182d33e4.png" width="60%" height="60%">
+
+
 
 7. 짐마켓 상세페이지
+<img src="https://user-images.githubusercontent.com/82187403/118357672-520a1580-b5b6-11eb-8d8d-e42ede98542b.png" width="60%" height="60%">
+
+
 
 8. 근딜 (업체 이벤트)
+<img src="https://user-images.githubusercontent.com/82187403/118357682-5e8e6e00-b5b6-11eb-9724-90cab955f8cb.png" width="60%" height="60%">
+
 
 9. 근딜 상세페이지
+<img src="https://user-images.githubusercontent.com/82187403/118357690-64844f00-b5b6-11eb-8e25-1e235c5d459d.png" width="60%" height="60%">
+
 
 10. 쪽지
+<img src="https://user-images.githubusercontent.com/82187403/118357758-a0b7af80-b5b6-11eb-9c28-2ecd48911ac2.png" width="60%" height="60%">
+
+<img src="https://user-images.githubusercontent.com/82187403/118357922-5d117580-b5b7-11eb-9f4e-0106eafd5a82.png" width="60%" height="60%">
+
+
 
 11. 마이페이지
+<img src="https://user-images.githubusercontent.com/82187403/118357642-39016480-b5b6-11eb-91e5-4c544d195664.png" width="60%" height="60%">
+
+
 
 12. 관리자페이지
+<img src="https://user-images.githubusercontent.com/82187403/118357738-8c73b280-b5b6-11eb-8cf2-df1948dfae2b.png" width="60%" height="60%">
+
+
 ---
 ## 설계
 ### 1. 유즈케이스
