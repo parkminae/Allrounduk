@@ -140,6 +140,6 @@
 
 ### 3. ERD다이어그램
   ![image](https://user-images.githubusercontent.com/82187403/118356169-eb352e00-b5ae-11eb-95f8-cad4461f2ce6.png)
-—
+---
 ## 시연동영상
 [동영상보러가기](https://drive.google.com/file/d/1ALsh9BqNvQlHkBbZoXKslN-ccia-E9bD/view?usp=sharing)
